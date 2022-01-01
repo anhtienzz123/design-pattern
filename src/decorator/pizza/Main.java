@@ -6,16 +6,21 @@ public class Main {
 		Pizza tomato = new TomatoPizza();
         Pizza chicken = new ChickenPizza();
 
+//        System.out.println(tomato.doPizza());
+//        System.out.println(chicken.doPizza());
+
+//        Pizza tomato = new PepperDecorator(tomato);
+//        System.out.println(pepperDecorator.doPizza());
+//
+//        Pizza cheeseDecorator = new CheeseDecorator(pepperDecorator);
+//        System.out.println(cheeseDecorator.doPizza());
+        tomato = new PepperDecorator(tomato);
         System.out.println(tomato.doPizza());
-        System.out.println(chicken.doPizza());
 
-        PepperDecorator pepperDecorator = new PepperDecorator(tomato);
-        System.out.println(pepperDecorator.doPizza());
-
-        CheeseDecorator cheeseDecorator = new CheeseDecorator(tomato);
-        System.out.println(cheeseDecorator.doPizza());
+        tomato = new CheeseDecorator(tomato);
+        System.out.println(tomato.doPizza());
         
-        CheeseDecorator cheeseDecorator2 = new CheeseDecorator(pepperDecorator);
-        System.out.println(cheeseDecorator2.doPizza());
+//        CheeseDecorator cheeseDecorator2 = new CheeseDecorator(pepperDecorator);
+//        System.out.println(cheeseDecorator2.doPizza());
 	}
 }
